@@ -6,8 +6,6 @@ class Snake:
     # Screen could be in a service Locator
     def __init__(self, grid):
         self.grid = grid
-        self.max_width = len(grid[0])
-        self.max_height = len(grid)
         self.length = 1
         self.position = {'i': 1, 'j': 3}
         self.head = self.birth()
@@ -27,7 +25,6 @@ class Snake:
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_a: # Go left
                     print("Left")
-                    if self.position['i'] > self.max_height
                     self.position['i'] = self.position['i'] - 1
                 if event.key == pygame.K_s: # Go down
                     print("Down")
