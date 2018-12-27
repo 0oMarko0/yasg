@@ -1,6 +1,5 @@
 import pygame
 from cube.State import State
-from colors.Colors import *
 
 
 class Cube:
