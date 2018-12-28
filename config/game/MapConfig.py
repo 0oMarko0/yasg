@@ -1,6 +1,6 @@
-from UI.config.grid.GridParser import GridParser
+from config.game.MapConfigParser import MapConfigParser;
 
-grid_parser = GridParser()
+grid_parser = MapConfigParser()
 config = grid_parser.get_grid_config()
 
 CUBE_SIZE = config['CUBE_SIZE']

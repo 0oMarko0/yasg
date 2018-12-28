@@ -1,12 +1,12 @@
 import json
-from UI.config.Parser import Parser
+from config.Parser import Parser
 
 
 class ColorParser:
 
     def __init__(self):
         self.colors = []
-        self.parser = Parser('/Users/marco/Workspace/Python/snake/UI/config/colors/default_color_config.json')
+        self.parser = Parser('/Users/marco/Workspace/Python/snake/config/colors/default_color_config.json')
         self.parser.get_config_file()
         self.config_file = self.parser.get_config_file()
         self.build_color()

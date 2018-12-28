@@ -1,18 +1,20 @@
 import json
+import os
 
-from UI.config.Parser import Parser
+
+from config.Parser import Parser
 
 
-class GridParser:
+class MapConfigParser:
 
     def __init__(self):
         self.grid_config = {}
-        self.parser = Parser('/Users/marco/Workspace/Python/snake/UI/config/grid/default_grid_config.json') # Get relative path
+        self.parser = Parser('/Users/marco/Workspace/Python/snake/config/game/default_map_config.json') # Get relative path
         self.parser.get_config_file()
         self.config_file = self.parser.get_config_file()
-        self.build_grid_config()
+        self.build_map_config()
 
-    def build_grid_config(self):
+    def build_map_config(self):
         config = json.load(self.config_file)
 
         self.grid_config['CUBE_SIZE'] = config['cube_size']

@@ -1,14 +1,14 @@
 import math
 import pygame
 
-from UI.config.colors.Colors import *
-
+from game.map.State import State
+from config.colors.Colors import *
 
 class Grid:
 
-    def __init__(self, screen, cube_size, grid_width, grid_height, show_grid,
+    def __init__(self, screen, game_map, cube_size, grid_width, grid_height, show_grid,
                  margin_l=0, margin_r=0, margin_t=0, margin_b=0):
-        self.grid = [[]]
+        self.grid = game_map
         self.screen = screen
         self.cube_size = cube_size
         self.height = grid_height
@@ -19,6 +19,7 @@ class Grid:
         self.margin_b = margin_b
         self.color = FOREGROUND if show_grid else BACKGROUND
         self.validate_dimension()
+        self.render()
 
     def get_cube(self, coords):
         i = coords['i'] % self.height
@@ -52,11 +53,38 @@ class Grid:
     def calculate_grid_width(self):
         return self.width - self.margin_l - self.margin_r
 
+    def grid_top(self):
+        return self.height - (self.height - self.margin_t)
+
     def grid_bottom(self):
         return self.height - self.margin_b
 
+    def grid_left(self):
+        return self.width - (self.width - self.margin_l)
+
     def grid_right(self):
         return self.width - self.margin_r
+
+    def fill(self, i, j, color):
+        top_left = self.pixel_position(i, j);
+        pygame.draw.rect(self.screen, color, (top_left['x'], top_left['y'], self.cube_size - 1, self.cube_size - 1))
+
+    def pixel_position(self, i, j):
+        grid_top = self.grid_top() + 1
+        grid_left = self.grid_left() + 1
+
+        x = grid_top + i*self.cube_size
+        y = grid_left + j*self.cube_size
+
+        return {'x': x, 'y': y}
+
+    def render(self):
+        for i in range(0, self.grid.row):
+            for j in range(0, self.grid.col):
+                if self.grid.get_state_at(i, j) == State.FOOD:
+                    self.fill(i, j, SECONDARY)
+                if self.grid.get_state_at(i, j) == State.SNAKE:
+                    self.fill(i, j, SNAKE)
 
     def validate_dimension(self):
         if self.width % self.cube_size != 0:
