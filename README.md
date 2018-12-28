@@ -16,5 +16,8 @@ A short description of the motivation behind the creation and maintenance of the
 
 ## ᖴᖇᗩᗰEᗯOᖇK ᑌᔕEᗪ
 <b>Built with</b>
-- [Pygame](https://www.pygame.org/news)
+- [Python 3.7.0](https://www.python.org/downloads/release/python-370/)
+- [Pygame 1.9.4](https://www.pygame.org/news)
 
+## ᑕOᑎTᖇIᗷᑌTE
+Feel free to fork this repo and tweak this project as you wish
