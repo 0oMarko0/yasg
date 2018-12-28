@@ -1,0 +1,10 @@
+{
+    "cube_size": 100,
+    "grid_width": 1200,
+    "grid_height": 800,
+    "margin_left": 100,
+    "margin_right": 100,
+    "margin_top": 100,
+    "margin_bottom": 100,
+    "show_grid": "true"
+}

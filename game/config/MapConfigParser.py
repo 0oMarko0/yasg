@@ -7,7 +7,7 @@ class GridParser:
 
     def __init__(self):
         self.grid_config = {}
-        self.parser = Parser('/Users/marco/Workspace/Python/snake/UI/config/grid/default_grid_config.json') # Get relative path
+        self.parser = Parser('/Users/marco/Workspace/Python/snake/game/config/default_map_config.json') # Get relative path
         self.parser.get_config_file()
         self.config_file = self.parser.get_config_file()
         self.build_grid_config()

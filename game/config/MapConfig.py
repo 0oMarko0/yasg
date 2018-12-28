@@ -1,4 +1,4 @@
-from UI.config.grid.GridParser import GridParser
+from game.config.MapConfigParser import GridParser
 
 grid_parser = GridParser()
 config = grid_parser.get_grid_config()
