@@ -1,4 +1,4 @@
-from game.config.MapConfig import *
+from config.game.MapConfig import *
 from UI.grid.Grid import Grid
 
 

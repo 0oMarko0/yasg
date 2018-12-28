@@ -26,6 +26,9 @@ class Map:
 
         self.set_state_at(random_row, random_col, State.FOOD)
 
+    def calculate_snake_position(self, i, j):
+        self.set_state_at(i, j, State.SNAKE)
+
     def __str__(self):
         return '\n'.join(' | '.join(map(str, self.row)) for self.row in self.map)
 

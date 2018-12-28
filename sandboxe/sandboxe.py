@@ -4,7 +4,6 @@ import pygame
 from pygame.locals import *
 from UI.grid.GridFactory import GridFactory
 from game.config.MapConfig import *
-from UI.config.colors.Colors import *
 
 pygame.init()
 

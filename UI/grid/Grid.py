@@ -1,9 +1,8 @@
 import math
 import pygame
 
-from UI.config.colors.Colors import *
 from game.map.State import State
-
+from config.colors.Colors import *
 
 class Grid:
 
@@ -80,11 +79,10 @@ class Grid:
         return {'x': x, 'y': y}
 
     def render(self):
-        self.grid.generate_random_food()
         for i in range(0, self.grid.row):
             for j in range(0, self.grid.col):
                 if self.grid.get_state_at(i, j) == State.FOOD:
-                    self.fill(i, j, PRIMARY)
+                    self.fill(i, j, SECONDARY)
                 if self.grid.get_state_at(i, j) == State.SNAKE:
                     self.fill(i, j, SNAKE)
 

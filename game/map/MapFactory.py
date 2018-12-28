@@ -1,6 +1,6 @@
 import math
 
-from game.config.MapConfig import *
+from config.game.MapConfig import *
 from game.map.Map import Map
 
 
