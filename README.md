@@ -1,4 +1,4 @@
-![alt text](pygame.png "Logo Title Text 1")
+![pygame](pygame.png "Logo Title Text 1")
 
 ## YET ᗩᑎOTᕼEᖇ ᔕᑎᗩKE GᗩᗰE
 This project as started during christmas time while i was off from school.
@@ -11,11 +11,16 @@ There's propablly more than enought snake game on github and on the web, so why
 chosing this ? The scale for this project was perfect for the time line i had to complete 
 it. I've tried to focuse mainly on architecure. The main goal was to make this project as 
 extensible as possible. I wanted the game logic completly independent from pygame so i could,
- if i want, make a web interface with a web socket api.
+ if i want, make a web interface and a api whit [flask](http://flask.pocoo.org/) 
  
 ## IᑎᔕTᗩᒪᒪᗩTIOᑎ
-
+#### Mac
+#### Linux
+#### Windows
+ 
 ## ᖴEᗩTᑌᖇEᔕ
+#### Customisable Theme
+The project include a theme generator that take a json as input. I've toke the json format found on [terminal.sexy](https://terminal.sexy/)
 
 ## ᑕOᗪE ᔕTYᒪE
 
