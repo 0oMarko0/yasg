@@ -5,7 +5,7 @@ from pygame.locals import *
 from UI.grid.GridFactory import GridFactory
 from config.colors.Colors import *
 from config.game.MapConfig import *
-from game.map.MapFactory import MapFactory
+from game.Game import Game
 
 pygame.init()
 
@@ -14,17 +14,31 @@ DISPLAYSURF.fill(BACKGROUND)
 pygame.display.set_caption("S4n7eB0x")
 pygame.key.set_repeat(1, 75)
 
-game_map = MapFactory.build_map()
-grid = GridFactory.build_grid(DISPLAYSURF, game_map)
+UP = 'up'
+DOWN = 'down'
+LEFT = 'left'
+RIGHT = 'right'
+
+game = Game()
+game.start()
+grid = GridFactory.build_grid(DISPLAYSURF, game.game_map)
 grid.draw()
 
 while True:
-
-    for i in range(0, 5):
-        game_map.calculate_snake_position(i, 2)
-        grid.render()
+    game.update()
+    grid.render()
 
     for event in pygame.event.get():
+        if event.type == KEYDOWN:
+            if event.key == K_w:
+                game.movement(UP)
+            elif event.key == K_s:
+                game.movement(DOWN)
+            elif event.key == K_a:
+                game.movement(LEFT)
+            elif event.key == K_d:
+                game.movement(RIGHT)
+
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
