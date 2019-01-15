@@ -66,7 +66,7 @@ class Grid:
         return self.width - self.margin_r
 
     def fill(self, i, j, color):
-        top_left = self.pixel_position(i, j);
+        top_left = self.pixel_position(i, j)
         pygame.draw.rect(self.screen, color, (top_left['x'], top_left['y'], self.cube_size - 1, self.cube_size - 1))
 
     def pixel_position(self, i, j):
